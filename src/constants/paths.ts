@@ -1,6 +1,7 @@
-export enum paths {
-  MAIN = '/',
-  NOTFOUND = '*',
-  EDIT = 'edit',
-  ADD = 'add',
-}
+export const paths = {
+  MAIN: '/',
+  NOT_FOUND: '*',
+  ADD: '/add',
+  EDIT: '/edit',
+  TASK: '/:id',
+};
