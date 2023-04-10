@@ -1,21 +1,12 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { StyledButton } from './StyledComponents';
+import { StyledButton, StyledLink } from './Button.styled';
 import { ButtonProps } from './Button.types';
 
 export function Button({ onClick, type = 'button', text, to }: ButtonProps) {
-  const navigate = useNavigate();
-
-  const handleClick = () => {
-    if (to) {
-      navigate(to);
-    } else {
-      onClick && onClick();
-    }
-  };
-
-  return (
-    <StyledButton variant="contained" onClick={handleClick} type={type}>
+  return to ? (
+    <StyledLink to={to}>{text}</StyledLink>
+  ) : (
+    <StyledButton variant="contained" onClick={onClick} type={type}>
       {text}
     </StyledButton>
   );
