@@ -16,10 +16,10 @@ export function TaskItem({ task, deleteTask, clickIsDone, clickIsImportant }: Ta
 
   return (
     <TaskContainer>
-      <Title isImportant={isImportant} variant="body1" isDone={isDone}>
+      <Title important={String(isImportant)} variant="body1" done={String(isDone)}>
         {name}
       </Title>
-      <Description isImportant={isImportant} variant="body2" isDone={isDone}>
+      <Description important={String(isImportant)} variant="body2" done={String(isDone)}>
         {info}
       </Description>
       <OptionButton

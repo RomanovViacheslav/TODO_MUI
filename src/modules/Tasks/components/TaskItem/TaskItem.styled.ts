@@ -2,14 +2,14 @@ import styled from '@emotion/styled';
 import { Typography, Box } from '@mui/material';
 import { TypographyProps, BoxProps } from './TaskItem.types';
 
-export const Title = styled(Typography)<TypographyProps>(({ theme, isDone, isImportant }) => ({
-  textDecoration: isDone ? 'line-through' : 'none',
-  color: isDone ? theme.palette.text.disabled : isImportant ? 'orange' : 'inherit',
+export const Title = styled(Typography)<TypographyProps>(({ theme, done, important }) => ({
+  textDecoration: done === 'true' ? 'line-through' : 'none',
+  color: done === 'true' ? theme.palette.text.disabled : important === 'true' ? 'orange' : 'inherit',
 }));
 
-export const Description = styled(Typography)<TypographyProps>(({ theme, isDone, isImportant }) => ({
-  textDecoration: isDone ? 'line-through' : 'none',
-  color: isDone ? theme.palette.text.disabled : isImportant ? 'orange' : 'inherit',
+export const Description = styled(Typography)<TypographyProps>(({ theme, done, important }) => ({
+  textDecoration: done === 'true' ? 'line-through' : 'none',
+  color: done === 'true' ? theme.palette.text.disabled : important === 'true' ? 'orange' : 'inherit',
 }));
 
 export const TaskContainer = styled(Box)<BoxProps>(({ theme }) => ({

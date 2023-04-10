@@ -8,8 +8,8 @@ export type TaskItemProps = {
 };
 
 export type TypographyProps = {
-  isDone: boolean;
-  isImportant: boolean;
+  done: string;
+  important: string;
   theme?: ThemeType;
 };
 
